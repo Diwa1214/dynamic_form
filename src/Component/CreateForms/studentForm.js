@@ -4,7 +4,7 @@ export const StudentForms = [
         type:"text",
         required:true,
         check:(val)=>{
-           return  val.length > 0
+           return  val.length > 0 && "^[a-zA-Z0-9+_.-]+@[a-zA-Z0-9.-]+$"
         },
         value:"",
         label:"email",
@@ -99,5 +99,21 @@ export const StudentForms = [
         errorText:"Please fill the field"
     },
   
+    {
+        props:"Passed_Out",
+        type:"select",
+        value:"",
+        label:"passes_out",
+        options:[
+            {
+              value:1,
+              name:"2020"
+            },
+            {
+                value:2,
+                name:"2022"
+            }
+    ],
+    },
 
 ]

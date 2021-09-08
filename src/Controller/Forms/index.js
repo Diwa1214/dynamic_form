@@ -104,6 +104,24 @@ function Form(props) {
     let text = state.textField;
     let cloneText = text;
     let checkText = true;
+    text.map((t, i) => {
+    	if (t.required) {
+    		if (!t.check(t.value)) {
+    			checkText= false
+                if(checkText == false){
+                    (cloneText = [
+    					...cloneText.slice(0, i),
+    					{
+    						...t,
+    						...cloneText[i],
+    						error: true
+    					},
+    					...cloneText.slice(i + 1)
+    				])
+                }
+    		}
+    	}
+    })
     if (!checkText) {
       //Error dispatch
       dispatch({

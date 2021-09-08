@@ -16,13 +16,16 @@ export default function BasicTextFields(props) {
 
   return (
     <form className={classes.root} noValidate autoComplete="off">
-      <TextField  id="filled-required" label={props.label} onChange={(e)=>{
+      <TextField  id="filled-required" label={props.label} 
+      onChange={(e)=>{
            props.handleChanging({...props,value:e.target.value})
-      }} required={props.required} 
-         error={props.error} 
+      }}
+       required={props.required} 
+        error={props.error} 
         helperText={props.error && props.errorText}  variant="outlined" InputProps={{
         readOnly:props.readOnly ? props.readOnly :false
-      }} value={props.value} />
+      }}
+       value={props.value} />
 
     </form>
   );
