@@ -1,23 +1,16 @@
 import logo from './logo.svg';
 import './App.css';
-
+import StudentForm from './Component/StudentForm';
+import {Route,BrowserRouter} from "react-router-dom"
+import SuccessSubmit from './Component/SuccessSubmit';
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+        <BrowserRouter>
+            <Route path="/" component ={StudentForm} exact></Route>
+            <Route path="/edit" component ={StudentForm} exact></Route>
+            <Route path ="/SuccessSubmit" component ={SuccessSubmit}/>
+        </BrowserRouter>
     </div>
   );
 }
