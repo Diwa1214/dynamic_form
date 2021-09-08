@@ -14,6 +14,20 @@ export const StudentForms = [
         
     },
     {
+        props:"email",
+        type:"password",
+        required:true,
+        check:(val)=>{
+           return  val.length > 7
+        },
+        value:"",
+        label:"Password",
+        width:"48%",
+        error:false,
+        errorText:"Please enter the atleast 7 character"
+        
+    },
+    {
         props:"name",
         type:"text",
         required:true,

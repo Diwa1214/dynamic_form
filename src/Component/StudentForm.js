@@ -22,14 +22,11 @@ function StudentForm() {
   },[uri])
    
   const handleSubmit = (value)=>{
-      if((value.email == "" && value.name =="" && value.address =="" && value.clgName == "")){
-              return
+      if((value.email !=="" && value.password !== "" && value.address !=="" && value.name !=="" && value.clgName!=="")){
+        localStorage.setItem("value",JSON.stringify(value))
+        histroy.push("/SuccessSubmit")
       }
-      else{
-          localStorage.setItem("value",JSON.stringify(value))
-          histroy.push("/SuccessSubmit")
-
-      }
+       return
   }
 console.log("value",defaultValue.course);
 

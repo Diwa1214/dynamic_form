@@ -25,7 +25,7 @@ export default function BasicTextFields(props) {
         helperText={props.error && props.errorText}  variant="outlined" InputProps={{
         readOnly:props.readOnly ? props.readOnly :false
       }}
-       value={props.value} />
+       value={props.value} type={props.type} />
 
     </form>
   );

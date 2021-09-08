@@ -148,6 +148,11 @@ function Form(props) {
               return (
                   <SimpleSelect   key={index} {...text} handleChanging= {handleChange} index={index} />
               )
+         case "password":
+                return (
+                   <BasicTextFields key={index} {...text} handleChanging= {handleChange} index={index}/>
+                )
+              
       }
  }
 
